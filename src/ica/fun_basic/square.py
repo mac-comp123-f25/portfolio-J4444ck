@@ -1,6 +1,8 @@
 import turtle
 def turtle_square(sqTurt, side_len):
-    pass
+    sqTurt.forward(side_len)
+    sqTurt.right(90)
+    sqTurt.forward(side_len)
 
 
 win = turtle.Screen()
