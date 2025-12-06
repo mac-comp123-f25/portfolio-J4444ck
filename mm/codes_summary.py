@@ -1,5 +1,8 @@
+# --------------------------------------------------------------------
 # Chapter 7 – Selection (if / Boolean logic)
-
+# shows how programs make decisions by checking conditions.
+# multi-branch decision-making using if/elif/else.
+# --------------------------------------------------------------------
 def grade_letter(score):
     """Return letter grade based on numeric score."""
     if score >= 90:
@@ -19,8 +22,11 @@ print(grade_letter(59))   # F
 print()
 
 
-# Chapter 8 – More About Iteration (loops)
-
+# --------------------------------------------------------------------
+# Chapter 8 – Iteration (Loops)
+# explains how to repeat actions using while and for loops.
+# demonstrates repeated updates until a stopping condition is met.
+# --------------------------------------------------------------------
 def collatz_length(n):
     """Return how many steps it takes to reach 1 in the 3n+1 sequence."""
     steps = 0
@@ -37,8 +43,12 @@ print(collatz_length(6))  # 8
 print()
 
 
-# Chapter 9 – Strings (text)
-
+# --------------------------------------------------------------------
+# Chapter 9 – Strings (Text Processing)
+# Strings are sequences, so they can be looped through just like lists.
+# remove_vowels() demonstrates filtering characters from a string.
+# This reinforces iteration, membership checks, and string building.
+# --------------------------------------------------------------------
 def remove_vowels(text):
     """Return a copy of text with all vowels removed."""
     vowels = "aeiouAEIOU"
@@ -53,8 +63,12 @@ print(remove_vowels("Hello World"))  # Hll Wrld
 print()
 
 
-# Chapter 10 – Lists (collections of items)
-
+# --------------------------------------------------------------------
+# Chapter 10 – Lists (Collections of Items)
+# Lists hold multiple values and support powerful operations.
+# squares_min_max() uses a list comprehension, min(), and max().
+# These tools are fundamental for data analysis and algorithms.
+# --------------------------------------------------------------------
 def squares_min_max(n):
     """Return (min_square, max_square) for squares of 0..n-1."""
     squares = [k * k for k in range(n)]
@@ -66,27 +80,33 @@ print(lo, hi)  # 0 16
 print()
 
 
-# Chapter 11 – Files (reading and writing data)
-
+# --------------------------------------------------------------------
+# Chapter 11 – Files (Reading and Writing)
+# Programs often read data from files or save outputs.
+# sum_file() demonstrates safe file reading using a with-block.
+# This is essential for handling datasets and persistent storage.
+# --------------------------------------------------------------------
 def sum_file(filename):
     """Read a file of one number per line and return the total."""
     total = 0.0
     with open(filename, "r") as f:
         for line in f:
             line = line.strip()
-            if line:                # skip empty lines
+            if line:
                 total += float(line)
     return total
 
 print("Chapter 11 examples:")
-# Uncomment the following line and ensure "numbers.txt" exists:
-# print(sum_file("numbers.txt"))
 print("(Chapter 11 example: sum_file('numbers.txt'))")
 print()
 
 
-# Chapter 12 – Dictionaries (key–value lookups)
-
+# --------------------------------------------------------------------
+# Chapter 12 – Dictionaries (Key-Value Mapping)
+# allows fast lookup and counting tasks.
+# word_counts() builds a frequency table of words in a string.
+# This pattern is foundational in natural language processing.
+# --------------------------------------------------------------------
 def word_counts(text):
     """Return a dictionary mapping each word to its count."""
     counts = {}
@@ -100,8 +120,12 @@ print(word_counts("hi hi HI there"))  # {'hi': 3, 'there': 1}
 print()
 
 
+# --------------------------------------------------------------------
 # Chapter 17 – Classes and Objects: Basics
-
+# introduces OOP: combining data (attributes) and behavior (methods).
+# Point supports movement, distance calculation, and clean printing.
+# demonstrates constructors, methods, and encapsulation.
+# --------------------------------------------------------------------
 class Point:
     """Point in 2D space with simple movement and distance methods."""
     def __init__(self, x=0, y=0):
@@ -127,8 +151,12 @@ print(p)                         # (4, 2)
 print()
 
 
-# Chapter 18 – Classes and Objects: Deeper (Fractions)
-
+# --------------------------------------------------------------------
+# Chapter 18 – Classes and Objects: Fractions
+# expands OOP techniques: operator overloading and automatic reduction.
+# The Fraction class defines __add__ to allow f1 + f2.
+# Using gcd ensures fractions remain in simplest form.
+# --------------------------------------------------------------------
 from math import gcd
 
 class Fraction:
@@ -155,8 +183,11 @@ print(f1 + f2)  # 5/6
 print()
 
 
-# Chapter 20 – Unit Testing (automatic code checking)
-
+# --------------------------------------------------------------------
+# Chapter 20 – Unit Testing (Automatic Code Checking)
+# let you verify expected behavior automatically.
+# If an assertion fails, the program stops — helping catch bugs early.
+# --------------------------------------------------------------------
 def square(n):
     """Return n squared."""
     return n * n
@@ -167,5 +198,6 @@ def test_square():
     assert square(-3) == 9
 
 print("Chapter 20 examples:")
-test_square()  # if the program finishes normally, the tests passed
+test_square()  # If nothing breaks, tests passed.
 print("All tests in test_square passed.")
+
